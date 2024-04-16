@@ -1,13 +1,19 @@
-RewriteEngine on
 
-# Redirect to another domain: shubham.github.io.
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} !^(www\.)?shubham\.github\.io$ [NC]
-RewriteRule .* http://shubham.github.io%{REQUEST_URI} [R=301,L]
-# Same for HTTPS:
-RewriteCond %{HTTPS} on
-RewriteCond %{HTTP_HOST} !^(www\.)?shubham\.github\.io$ [NC]
-RewriteRule .* https://shubham.github.io%{REQUEST_URI} [R=301,L]
+# HTID:3103812: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:3103812:
+RewriteCond %{HTTP_HOST} !^www.shubham.github.io$ [NC]
+RewriteRule ^(.*)$ https://www.shubham.github.io/$1 [L,R=301]
+RewriteCond %{HTTP_USER_AGENT} libwww-perl.* 
+RewriteRule .* ? [F,L]
+RewriteCond %{HTTP_HOST} ^www\.shubham.github.io\.github.io$
+RewriteRule ^/?$ "http\:\/\/shubham.github.io.io\/" [R=301,L]
 
-# 301 Redirect URLs.
-Redirect 301 /shubhamdevops.github.io/shubham.github.io https://shubham.github.io
+<IfModule mod_expires.c>
+    ExpiresActive on
+ 
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+</IfModule>
