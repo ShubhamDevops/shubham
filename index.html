@@ -1021,7 +1021,7 @@
 
           <!-- contact form -->
           <div class="contact__formHolder">
-            <form class="contact__form form-styled" action="contact_form.php" data-url="contact_form.php" data-success-msg="Message sent successfully!" data-err-msg="Oops! something went wrong, please try again.">
+            <form class="contact__form form-styled" name="form" action="contact_form.php" data-url="contact_form.php" data-success-msg="Message sent successfully!" data-err-msg="Oops! something went wrong, please try again.">
 
               <!-- name control -->
               <div class="group">
@@ -1084,6 +1084,7 @@
               <div class="group">
                 <div class="control">
                   <button class="submit-btn w-btn w-btn--s2 w-btn--dark" type="button" onclick="window._contactFormValidation(this)">Send</button>
+                   <input class="submit-btn w-btn w-btn--s2 w-btn--dark" type="button" onclick="window._contactFormValidation(this)"Send">
                 </div>
               </div>
             </form>
